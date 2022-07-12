@@ -1,0 +1,9 @@
+.post-container {
+    margin: 0 0 10px;
+    border-bottom: 1px whitesmoke solid;
+}
+
+.post-container p {
+    margin: 0 0 10px;
+    color: white;
+}

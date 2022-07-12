@@ -1,0 +1,14 @@
+.header-bar {
+    height: auto;
+    width: 100%;
+    margin: 0 0 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-bar img {
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+}
