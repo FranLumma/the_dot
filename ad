@@ -1,0 +1,11 @@
+[33mcommit 710e588c85e784e69e04404539504fda8e1922d8[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Fran Lumma <fran.dev.use@outlook.com>
+Date:   Tue Jul 12 17:57:15 2022 -0300
+
+    First Commit
+
+[33mcommit addf9c18b48e3c4cd6a3f20c51641ac726520be2[m
+Author: Fran Lumma <fran.dev.use@outlook.com>
+Date:   Tue Jul 5 13:05:53 2022 -0300
+
+    Initialize project using Create React App

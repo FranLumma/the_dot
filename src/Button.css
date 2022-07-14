@@ -1,0 +1,21 @@
+._button {
+    min-width: 40px;
+    min-height: 40px;
+    padding: 5px;
+    border: 1px white solid;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+._button:hover {
+    cursor: pointer;
+    background-color: rgba(61, 61, 61, 0.5);
+}
+
+._button:focus {
+    background-color: rgba(0, 0, 0);
+}

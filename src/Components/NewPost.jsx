@@ -1,9 +1,35 @@
 import React, { useState } from "react";
 
-import Button from "./Button";
+import { db, auth } from "../firebase";
+import { addDoc, collection } from "firebase/firestore";
 
-const NewPost = ({ handlePostAddition }) => {
+import Button from "./Button";
+import "../NewPost.css";
+
+const NewPost = () => {
   const [inputData, setinputData] = useState("");
+
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, "0");
+  var mm = String(today.getMonth() + 1).padStart(2, "0");
+  var yyyy = today.getFullYear();
+
+  today = dd + "/" + mm + "/" + yyyy;
+
+  var hours = new Date();
+  var h = String(hours.getHours()).padStart(2, "0");
+  var m = String(hours.getMinutes());
+  var s = String(hours.getSeconds());
+  hours = h + ":" + m + ":" + s;
+
+  const handlePostAddition = async (postText) => {
+    await addDoc(collection(db, "posts"), {
+      id: Math.random(50),
+      date: today,
+      text: postText,
+      created: hours,
+    });
+  };
 
   const handleChange = (e) => {
     setinputData(e.target.value);
@@ -22,6 +48,7 @@ const NewPost = ({ handlePostAddition }) => {
   return (
     <div className="make-post">
       <textarea
+        className="text-input"
         name="post"
         id="newPost"
         cols="30"
@@ -29,7 +56,9 @@ const NewPost = ({ handlePostAddition }) => {
         onChange={handleChange}
         value={inputData}
       ></textarea>
-      <Button onClick={handlePostClick}>Crzy</Button>
+      <div className="button-container">
+        <Button onClick={handlePostClick}>SEND</Button>
+      </div>
     </div>
   );
 };

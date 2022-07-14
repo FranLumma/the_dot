@@ -1,0 +1,31 @@
+.make-post {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+.text-input {
+    width: 250px;
+    height: 100px;
+    padding: 10px;
+    margin: 0px 5px;
+    border: 1px white solid;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    resize: none;
+}
+
+.text-input:hover {
+    background-color: rgba(61, 61, 61, 0.5);
+}
+
+.button-container {
+    position: relative;
+}
+
+.button-container Button {
+    margin: 82px 0 0 0;
+    position: relative;
+    bottom: 0;
+}

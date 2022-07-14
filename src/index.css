@@ -1,7 +1,3 @@
-html, body {
-  height: 100vh;
-}
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -9,7 +5,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(19, 19, 19);
+  background-color: #131313;
+  background-image: url("./assets/bg_transparent.png");
+  background-attachment: fixed;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: #131313;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #131313;
+  border: 1px white solid;
+  border-radius: 5px;
 }
 
 code {

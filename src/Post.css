@@ -7,3 +7,19 @@
     margin: 0 0 10px;
     color: white;
 }
+
+.buttoncontainer {
+    position: relative;
+    height: 40px;
+    margin: 0 0 5px 0;
+}
+
+.buttoncontainer button {
+    position: absolute;
+    right: 0;
+}
+
+.buttoncontainer button img{
+    width: 25px;
+    height: 25px;
+}

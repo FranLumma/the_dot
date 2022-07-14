@@ -1,7 +1,20 @@
-import React from 'react';
+import React from "react";
 
-const PostPage = () => {
-    return ( <div className="home_container"></div> );
-}
- 
+import Posts from "../Components/Posts";
+import NewPost from "../Components/NewPost";
+import Nav from "../Components/NavBar";
+
+
+const PostPage = ({editPost}) => {
+  return (
+    <>
+      <Nav />
+      {editPost ? <NewPost /> : false}
+      <div className="content-box">
+        <Posts editPost={editPost} />
+      </div>
+    </>
+  );
+};
+
 export default PostPage;

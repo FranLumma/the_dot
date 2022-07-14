@@ -1,0 +1,40 @@
+.wrapper {
+    height: 100vh;;
+}
+
+.logo {
+    margin: 10px;
+    padding: auto;
+}
+
+.password_input input {
+    width: 15vw;
+    height: 4vh;
+    padding: 5px 10px;
+    margin: 0 5px 0 0;
+    border: 1px white solid;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.500);
+    color: white;
+}
+
+.password_input input:focus{
+    outline: none;
+}
+
+.password_input input:hover {
+    background-color: rgba(61, 61, 61, 0.5);
+}
+
+.password_input Button img {
+    width: 30px;
+    height: 30px;
+}
+
+.observer-container {
+    margin: 10px 0 0 0 ;
+}
+
+.observer-container button {
+    width: 100%;
+}
