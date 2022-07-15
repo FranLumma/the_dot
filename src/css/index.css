@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #131313;
-  background-image: url("./assets/bg_transparent.png");
+  background-image: url("../assets/bg_transparent.png");
   background-attachment: fixed;
 }
 

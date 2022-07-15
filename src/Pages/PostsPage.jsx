@@ -4,14 +4,13 @@ import Posts from "../Components/Posts";
 import NewPost from "../Components/NewPost";
 import Nav from "../Components/NavBar";
 
-
-const PostPage = ({editPost}) => {
+const PostPage = () => {
   return (
     <>
       <Nav />
-      {editPost ? <NewPost /> : false}
+      <NewPost />
       <div className="content-box">
-        <Posts editPost={editPost} />
+        <Posts />
       </div>
     </>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import "../Header.css"
+import "../css/NavBar.css"
 import Logo from "../assets/My_Cube.png"
 
 const Nav = () => {

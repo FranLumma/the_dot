@@ -1,6 +1,3 @@
-import React from "react";
-
-import { initializeApp } from "firebase/app";
 import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
@@ -14,7 +11,7 @@ const Authentication = async (email, password, setlogged) => {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.log(errorCode);
+      console.log("Code: " + errorCode + "  Message: " + errorMessage);
     });
 };
 

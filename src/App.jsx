@@ -1,32 +1,39 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
-import { db, auth } from "./firebase";
-import {
-  addDoc,
-  collection,
-  getDocs,
-  doc,
-  deleteDoc,
-  onSnapshot,
-  orderBy,
-  limitToLast,
-  query,
-} from "firebase/firestore";
-
-import PostPage from "./Pages/PostsPage";
 import Login from "./Pages/Login";
-import Nav from "./Components/NavBar";
-import "./App.css";
+import PostPage from "./Pages/PostsPage";
+import GuestPage from "./Pages/GuestBookPage";
+import ObserverPostPage from "./Pages/ObserverPostsPage";
+
+import "./css/App.css";
 
 const App = () => {
   const [logged, setlogged] = useState();
-  const [editPost, setEditPost] = useState();
+  const [observer, setObserver] = useState();
+  const [guestLog, setguestLog] = useState();
+
+  var loginD;
+  if (!logged) {
+    loginD = (
+      <Login
+        setlogged={setlogged}
+        setObserver={setObserver}
+        setguestLog={setguestLog}
+      />
+    );
+  } else if (logged) {
+    loginD = <PostPage />;
+  }
+  if(observer) {
+    loginD = <ObserverPostPage />
+  }
+  if (guestLog) {
+    loginD = <GuestPage />;
+  }
 
   return (
     <>
-      <div className="container">
-        {!logged ? <Login setlogged={setlogged} editPost={editPost} setEditPost={setEditPost} /> : <PostPage editPost={editPost} />}
-      </div>
+      <div className="container">{loginD}</div>
     </>
   );
 };

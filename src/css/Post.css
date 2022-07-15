@@ -8,6 +8,11 @@
     color: white;
 }
 
+.info p {
+    display: inline;
+    margin: 0 10px 0 0;
+}
+
 .buttoncontainer {
     position: relative;
     height: 40px;

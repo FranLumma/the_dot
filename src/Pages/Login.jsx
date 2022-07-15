@@ -1,17 +1,14 @@
-import React, { useEffect, useState } from "react";
-
-import { db, auth } from "../firebase";
-import { collection, getDocs, doc } from "firebase/firestore";
+import React, { useState } from "react";
 
 import Authentication from "./Authentication";
 import Logo from "../assets/My_Cube.png";
 import Button from "../Components/Button";
 
-import "../Login.css";
+import "../css/Login.css";
 
-const Login = ({ setlogged, setEditPost }) => {
+const Login = ({ setlogged, setObserver, setguestLog }) => {
   const [adminPassword, setadminPassword] = useState([]);
-  const adminEmail = "test@test.com";
+  const adminEmail = "fran.dev.use@outlook.com";
 
   const handlePassword = (e) => {
     setadminPassword(e.target.value);
@@ -20,7 +17,6 @@ const Login = ({ setlogged, setEditPost }) => {
   const handleCall = async (e) => {
     try {
       await Authentication(adminEmail, adminPassword, setlogged);
-      setEditPost(true);
       e.preventDefault();
     } catch (err) {
       console.log(err);
@@ -28,8 +24,11 @@ const Login = ({ setlogged, setEditPost }) => {
   };
 
   const handleObserver = async (e) => {
-    setlogged(true);
-    setEditPost(false);
+    setObserver(true);
+  };
+
+  const handleGuest = async (e) => {
+    setguestLog(true);
   };
 
   return (
@@ -45,16 +44,20 @@ const Login = ({ setlogged, setEditPost }) => {
               maxLength={16}
               placeholder="PASSWORD"
               onChange={handlePassword}
+              value={adminPassword}
             />
             <Button onClick={handleCall}>
-              <img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/forward.png" />
+              <img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/forward.png" alt="forward" />
             </Button>
           </form>
         </div>
         <div className="observer-container center">
           <Button onClick={handleObserver}>
-            <img src="https://img.icons8.com/material-outlined/24/FFFFFF/visible--v1.png" />
+            <img src="https://img.icons8.com/material-outlined/24/FFFFFF/visible--v1.png" alt="Eye" />
           </Button>
+        </div>
+        <div className="observer-container center">
+          <Button onClick={handleGuest}>LEAVE A MESSAGE</Button>
         </div>
       </div>
     </div>

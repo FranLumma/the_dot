@@ -4,18 +4,15 @@ import { db } from "../firebase";
 import {
   collection,
   getDocs,
-  doc,
-  deleteDoc,
   onSnapshot,
   orderBy,
   query
 } from "firebase/firestore";
 
-import Post from "./Post";
+import ObserverPost from "./ObserverPost";
 
-const Posts = () => {
+const ObserverPosts = () => {
   const [postData, setPostData] = useState([]);
-
 
   const ref = collection(db, "posts");
   const q = query(ref, orderBy("date", "desc"));
@@ -31,18 +28,13 @@ const Posts = () => {
     });
   }, []);
 
-  const deletePost = async (id) => {
-    const postDoc = doc(ref, id);
-    await deleteDoc(postDoc);
-  };
-
   return (
     <>
       {postData.map((postD) => (
-        <Post postD={postD} deletePost={deletePost} key={postD.id} />
+        <ObserverPost postD={postD} key={postD.id} />
       ))}
     </>
   );
 };
 
-export default Posts;
+export default ObserverPosts;
