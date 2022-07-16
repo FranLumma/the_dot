@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Login from "./Pages/Login";
 import PostPage from "./Pages/PostsPage";
@@ -9,31 +10,30 @@ import "./css/App.css";
 
 const App = () => {
   const [logged, setlogged] = useState();
-  const [observer, setObserver] = useState();
-  const [guestLog, setguestLog] = useState();
-
-  var loginD;
-  if (!logged) {
-    loginD = (
-      <Login
-        setlogged={setlogged}
-        setObserver={setObserver}
-        setguestLog={setguestLog}
-      />
-    );
-  } else if (logged) {
-    loginD = <PostPage />;
-  }
-  if(observer) {
-    loginD = <ObserverPostPage />
-  }
-  if (guestLog) {
-    loginD = <GuestPage />;
-  }
 
   return (
     <>
-      <div className="container">{loginD}</div>
+      <div className="container">
+        <Router>
+          <Routes>
+            <Route
+              path="/"
+              exact
+              element={
+                !logged ? (
+                  <Login
+                    setlogged={setlogged}
+                  />
+                ) : (
+                  <PostPage setlogged={setlogged} />
+                )
+              }
+            />
+            <Route path="/Observer" element={<ObserverPostPage />} />
+            <Route path="GuestBook" element={<GuestPage />} />
+          </Routes>
+        </Router>
+      </div>
     </>
   );
 };

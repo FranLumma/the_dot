@@ -7,6 +7,24 @@
     align-items: center;
 }
 
+.cont_back {
+    margin: 0;
+    position: absolute;
+    left: 50px;
+}
+
+.cont_back Button{
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+}
+
+.cont_back Button img {
+    width: 30px;
+    height: 30px;
+}
+
+
 .header-bar img {
     margin: 10px;
     width: 100px;

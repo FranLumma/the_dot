@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import Authentication from "./Authentication";
 import Logo from "../assets/My_Cube.png";
@@ -9,6 +10,7 @@ import "../css/Login.css";
 const Login = ({ setlogged, setObserver, setguestLog }) => {
   const [adminPassword, setadminPassword] = useState([]);
   const adminEmail = "fran.dev.use@outlook.com";
+  const navigate = useNavigate();
 
   const handlePassword = (e) => {
     setadminPassword(e.target.value);
@@ -24,11 +26,11 @@ const Login = ({ setlogged, setObserver, setguestLog }) => {
   };
 
   const handleObserver = async (e) => {
-    setObserver(true);
+    navigate("/Observer");
   };
 
   const handleGuest = async (e) => {
-    setguestLog(true);
+    navigate("/GuestBook");
   };
 
   return (
@@ -47,13 +49,19 @@ const Login = ({ setlogged, setObserver, setguestLog }) => {
               value={adminPassword}
             />
             <Button onClick={handleCall}>
-              <img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/forward.png" alt="forward" />
+              <img
+                src="https://img.icons8.com/ios-glyphs/30/FFFFFF/forward.png"
+                alt="forward"
+              />
             </Button>
           </form>
         </div>
         <div className="observer-container center">
           <Button onClick={handleObserver}>
-            <img src="https://img.icons8.com/material-outlined/24/FFFFFF/visible--v1.png" alt="Eye" />
+            <img
+              src="https://img.icons8.com/material-outlined/24/FFFFFF/visible--v1.png"
+              alt="Eye"
+            />
           </Button>
         </div>
         <div className="observer-container center">
