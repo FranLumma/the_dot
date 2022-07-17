@@ -7,10 +7,21 @@
     align-items: center;
 }
 
+.logo_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo_container img {
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+}
+
 .cont_back {
-    margin: 0;
     position: absolute;
-    left: 50px;
+    left: 40px;
 }
 
 .cont_back Button{
@@ -22,11 +33,4 @@
 .cont_back Button img {
     width: 30px;
     height: 30px;
-}
-
-
-.header-bar img {
-    margin: 10px;
-    width: 100px;
-    height: 100px;
 }
