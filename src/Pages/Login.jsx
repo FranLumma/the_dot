@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Authentication from "./Authentication";
-import Logo from "../assets/My_Cube.png";
 import Button from "../Components/Button";
+import Logo from "../assets/My_place.gif";
 
 import "../css/Login.css";
 

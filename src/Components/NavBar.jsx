@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import Button from "./Button";
 import "../css/NavBar.css";
-import Logo from "../assets/My_Cube.png";
+import Logo from "../assets/My_place.gif";
 
 const Nav = ({ setlogged }) => {
   const navigate = useNavigate();

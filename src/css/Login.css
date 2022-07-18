@@ -1,5 +1,11 @@
 .wrapper {
-    height: 100vh;;
+    height: 100vh;
+    width: 100%;
+}
+
+.login_content {
+    max-width: 330px;
+    width: 100%;
 }
 
 .logo {
@@ -7,8 +13,12 @@
     padding: auto;
 }
 
+.logo img {
+    width: 300px;
+}
+
 .password_input input {
-    width: 15vw;
+    width: 100%;
     height: 4vh;
     padding: 5px 10px;
     margin: 0 5px 0 0;
