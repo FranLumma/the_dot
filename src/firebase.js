@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getStorage } from "firebase/storage";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -11,7 +12,7 @@ const firebaseConfig = {
   authDomain: "first-try-15a07.firebaseapp.com",
   databaseURL: "https://first-try-15a07.firebaseio.com",
   projectId: "first-try-15a07",
-  storageBcket: "first-try-15a07.appspot.com",
+  storageBucket: "first-try-15a07.appspot.com",
   messagingSenderId: "476610929693",
   appId: "1:476610929693:web:ae4f294e94bc6fce3292f4",
 };
@@ -22,3 +23,4 @@ const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const auth = getAuth(app);
 export const provider = new GoogleAuthProvider();
+export const storage = getStorage(app); 

@@ -9,6 +9,15 @@ const Post = ({ postD, deletePost, guestLog }) => {
       {guestLog ? <p>{postD.name}</p> : false}
       <p>{postD.date}</p>
       <p>{postD.text}</p>
+      {postD.img ? (
+        <img
+          src={postD.img}
+          alt="y"
+          style={{ maxWidth: "500px"}}
+        />
+      ) : (
+        false
+      )}
       <div className="buttoncontainer">
         <Button onClick={() => deletePost(postD.id)}>
           <img
