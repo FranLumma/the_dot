@@ -76,7 +76,7 @@ const NewPost = () => {
 
         // update progress
         console.log(percent);
-        setpercent(percent);
+        setpercent(percent + "%");
       },
       (err) => console.log(err),
       () => {
