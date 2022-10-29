@@ -4,6 +4,10 @@
     margin: 5px 0;
 }
 
+.make-post > div > div {
+    display: grid;
+}
+
 .guestName {
     width: 250px;
     height: 15px;

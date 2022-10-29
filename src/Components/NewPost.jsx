@@ -11,6 +11,7 @@ const NewPost = () => {
   const [inputData, setinputData] = useState("");
   const [imgData, setimgData] = useState("");
   const [imgLink, setimgLink] = useState("");
+  const [percent, setpercent] = useState ("UPLOAD");
 
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, "0");
@@ -49,38 +50,41 @@ const NewPost = () => {
       setinputData("");
       setimgData("");
       setimgLink("");
+      setpercent("UPLOAD");
     }
   };
 
   const handleFileAttach = async (e) => {
-      setimgData(e.target.files[0]);
-      console.log(imgData + " ATTCHED");
+    setimgData(e.target.files[0]);
+    console.log(imgData + " ATTCHED");
   };
 
   const handleUpload = (e) => {
-    if (!imgData){
-      alert("PHOTO MISSING")
+    if (!imgData) {
+      alert("PHOTO MISSING");
+      return
     }
-    const storageRef = ref(storage, `/files/${imgData.name}`)
+    const storageRef = ref(storage, `/files/${imgData.name}`);
     const uploadTask = uploadBytesResumable(storageRef, imgData);
 
     uploadTask.on(
       "state_changed",
       (snapshot) => {
-          const percent = Math.round(
-              (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-          );
+        const percent = Math.round(
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        );
 
-          // update progress
-          console.log(percent);
+        // update progress
+        console.log(percent);
+        setpercent(percent);
       },
       (err) => console.log(err),
       () => {
-          // download url
-          getDownloadURL(uploadTask.snapshot.ref).then((url) => {
-              console.log(url);
-              setimgLink(url.toString());
-          });
+        // download url
+        getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+          console.log(url);
+          setimgLink(url.toString());
+        });
       }
     );
   };
@@ -97,11 +101,32 @@ const NewPost = () => {
         value={inputData}
       ></textarea>
       <div className="button-container">
-        <input type="file" name="myImage" accept="image/*" id="contained-button-file" onChange={handleFileAttach} />
-        <Button onClick={handleUpload}>UPLOAD</Button>
+      <div id="input_file">
+        <input
+          style={{
+            display: "none",
+          }}
+          type="file"
+          name="myImage"
+          accept="image/*"
+          id="contained-button-file"
+          onChange={handleFileAttach}
+        />
+        <label
+          htmlFor="contained-button-file"
+          style={{
+            color: "white",
+            backgroundcolor: "black",
+            display: "flex",
+          }}
+        >
+          Attach File
+        </label>
+        <Button onClick={handleUpload}>{percent}</Button>
       </div>
-      <div className="button-container">
+      <div id="submit_btn">
         <Button onClick={handlePostClick}>SEND</Button>
+        </div>
       </div>
     </div>
   );
