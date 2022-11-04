@@ -9,8 +9,12 @@ import "../css/Login.css";
 
 const Login = ({ setlogged, setObserver, setguestLog }) => {
   const [adminPassword, setadminPassword] = useState([]);
-  const adminEmail = "fran.dev.use@outlook.com";
+  const [adminEmail, setadminEmail] = useState([]);
   const navigate = useNavigate();
+
+  const handleEmail = (e) => {
+    setadminEmail(e.target.value);
+  };
 
   const handlePassword = (e) => {
     setadminPassword(e.target.value);
@@ -41,6 +45,13 @@ const Login = ({ setlogged, setObserver, setguestLog }) => {
         </div>
         <div className="password_input">
           <form className="center">
+          <input
+              type="email"
+              maxLength={35}
+              placeholder="EMAIL"
+              onChange={handleEmail}
+              value={adminEmail}
+            />
             <input
               type="password"
               maxLength={16}

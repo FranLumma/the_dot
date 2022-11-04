@@ -89,6 +89,7 @@ const NewPost = () => {
         getDownloadURL(uploadTask.snapshot.ref).then((url) => {
           console.log(url);
           setimgLink(url.toString());
+          setpercent("DONE");
         });
       }
     );

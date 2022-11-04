@@ -16,7 +16,7 @@ import Post from "./Post";
 const Posts = () => {
   const [postData, setPostData] = useState([]);
 
-
+  //const userId = auth.currentUser.uid;
   const ref = collection(db, "posts");
   const q = query(ref, orderBy("date", "desc"));
 

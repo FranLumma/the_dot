@@ -10,7 +10,7 @@ const ObserverPost = ({ postD }) => {
         <p>{postD.date}</p>
       </div>
       <p>{postD.text}</p>
-      {postD.img ? <img src={postD.img} alt="y" style={{ maxWidth: "500px"}}/> : false}
+      {postD.img ? <img src={postD.img} alt="y" loading="lazy" style={{ maxWidth: "500px"}}/> : false}
     </div>
   );
 };

@@ -12,6 +12,7 @@ const NewPost = () => {
   const [imgData, setimgData] = useState("");
   const [imgLink, setimgLink] = useState("");
   const [percent, setpercent] = useState ("UPLOAD");
+  //const userId = auth.currentUser.uid;
 
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, "0");
@@ -84,6 +85,7 @@ const NewPost = () => {
         getDownloadURL(uploadTask.snapshot.ref).then((url) => {
           console.log(url);
           setimgLink(url.toString());
+          setpercent("DONE");
         });
       }
     );
