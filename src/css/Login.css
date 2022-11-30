@@ -22,10 +22,10 @@
     height: 4vh;
     padding: 5px 10px;
     margin: 0 5px 0 0;
-    border: 1px white solid;
+    border: 1px black solid;
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.500);
-    color: white;
+    background-color: #1e1e1e;
+    color: #f6f6f6;
 }
 
 .password_input input:focus{
@@ -34,7 +34,12 @@
 }
 
 .password_input input:hover {
-    background-color: rgba(61, 61, 61, 0.5);
+    background-color: black;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #1e1e1e inset;
+    -webkit-text-fill-color: #f6f6f6
 }
 
 .password_input Button img {

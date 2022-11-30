@@ -12,7 +12,7 @@ const NewPost = () => {
   const [inputData, setinputData] = useState("");
   const [imgData, setimgData] = useState("");
   const [imgLink, setimgLink] = useState("");
-  const [percent, setpercent] = useState ("UPLOAD");
+  const [percent, setpercent] = useState("UPLOAD");
 
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, "0");
@@ -97,7 +97,7 @@ const NewPost = () => {
 
   return (
     <div className="make-post">
-      <div>
+      <div style={{display: "flex"}}>
         <div className="content_container">
           <input
             className="guestName"
@@ -106,7 +106,6 @@ const NewPost = () => {
             placeholder="Name"
             value={guestName}
           />
-        </div>
         <textarea
           className="text-input"
           name="post"
@@ -116,7 +115,8 @@ const NewPost = () => {
           onChange={handleChange}
           value={inputData}
           placeholder="Message"
-        ></textarea>
+          ></textarea>
+          </div>
         <div className="button-container">
           <div id="input_file">
             <input

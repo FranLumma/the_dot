@@ -1,9 +1,3 @@
-.make-post {
-    display: flex;
-    justify-content: center;
-    margin: 5px 0;
-}
-
 .make-post > div > div {
     display: grid;
 }
@@ -13,9 +7,9 @@
     height: 15px;
     padding: 10px;
     margin: 0px 5px 5px;
-    border: 1px white solid;
+    border: 1px black solid;
     border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #1e1e1e;
     color: white;
     resize: none;
 }
@@ -25,15 +19,15 @@
     height: 100px;
     padding: 10px;
     margin: 0px 5px;
-    border: 1px white solid;
+    border: 1px black solid;
     border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #1e1e1e;
     color: white;
     resize: none;
 }
 
 .text-input:hover, .guestName:hover {
-    background-color: rgba(61, 61, 61, 0.5);
+    background-color: black;
 }
 
 .button-container {

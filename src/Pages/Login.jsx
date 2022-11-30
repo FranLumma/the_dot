@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import Nav from "../Components/NavBar";
 import Authentication from "./Authentication";
 import Button from "../Components/Button";
+
 import Logo from "../assets/My_place.gif";
 
 import "../css/Login.css";
@@ -29,16 +31,9 @@ const Login = ({ setlogged, setObserver, setguestLog }) => {
     }
   };
 
-  const handleObserver = async (e) => {
-    navigate("/Observer");
-  };
-
-  const handleGuest = async (e) => {
-    navigate("/GuestBook");
-  };
-
   return (
     <div className="wrapper center">
+      <Nav />
       <div className="login_content">
         <div className="logo center">
           <img src={Logo} alt="" />
@@ -66,17 +61,6 @@ const Login = ({ setlogged, setObserver, setguestLog }) => {
               />
             </Button>
           </form>
-        </div>
-        <div className="observer-container center">
-          <Button onClick={handleObserver}>
-            <img
-              src="https://img.icons8.com/material-outlined/24/FFFFFF/visible--v1.png"
-              alt="Eye"
-            />
-          </Button>
-        </div>
-        <div className="observer-container center">
-          <Button onClick={handleGuest}>LEAVE A MESSAGE</Button>
         </div>
       </div>
     </div>

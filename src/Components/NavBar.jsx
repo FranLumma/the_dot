@@ -1,14 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import Button from "./Button";
 import "../css/NavBar.css";
-import Logo from "../assets/My_place.gif";
+
+import icon from "../assets/Group1.svg";
+import icon1 from "../assets/Group.svg";
+import icon2 from "../assets/My_Cube.svg";
 
 const Nav = ({ setlogged }) => {
   const navigate = useNavigate();
-  const handleBack = () => {
-    navigate("/");
+  const handleBack = (dest) => {
+    navigate("/" + dest);
     if (setlogged) {
       setlogged(false);
     } else {
@@ -16,19 +18,39 @@ const Nav = ({ setlogged }) => {
     }
   };
   return (
-    <header className="header-bar">
-      <div className="cont_back">
-        <Button onClick={handleBack}>
-          <img
-            src="https://img.icons8.com/ios-glyphs/30/FFFFFF/back.png"
-            alt="Back"
-          />
-        </Button>
+    <div className="navbar">
+      <div className="c_c">
+        <ul className="navbar_content">
+          <li
+            onClick={() => {
+              handleBack("GuestBook");
+            }}
+          >
+            <a href="">
+              <img src={icon1} alt="Back" />
+            </a>
+          </li>
+          <li
+            onClick={() => {
+              handleBack("About");
+            }}
+          >
+            <a href="">
+              <img src={icon} alt="Back" />
+            </a>
+          </li>
+          <li
+            onClick={() => {
+              handleBack("");
+            }}
+          >
+            <a href="">
+              <img src={icon2} alt="Back" style={{transform: "rotate(-25deg)", width: "30px"}}/>
+            </a>
+          </li>
+        </ul>
       </div>
-      <div className="logo_container">
-        <img src={Logo} alt="yo" />
-      </div>
-    </header>
+    </div>
   );
 };
 

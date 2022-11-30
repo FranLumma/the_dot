@@ -11,7 +11,9 @@ const NewPost = () => {
   const [inputData, setinputData] = useState("");
   const [imgData, setimgData] = useState("");
   const [imgLink, setimgLink] = useState("");
-  const [percent, setpercent] = useState ("UPLOAD");
+  const [link_, setlink_] = useState("");
+  const [titleP, setitleP] = useState("");
+  const [percent, setpercent] = useState("UPLOAD");
   //const userId = auth.currentUser.uid;
 
   var today = new Date();
@@ -28,12 +30,14 @@ const NewPost = () => {
 
   hours = h + ":" + m + ":" + s;
 
-  const handlePostAddition = async (postText, postImg) => {
+  const handlePostAddition = async (postText, postImg, postLink, postTitle) => {
     await addDoc(collection(db, "posts"), {
       id: Math.random(50),
       date: today,
+      title: postTitle,
       text: postText,
       img: imgLink,
+      link: postLink,
       created: hours,
     });
   };
@@ -42,15 +46,25 @@ const NewPost = () => {
     setinputData(e.target.value);
   };
 
+  const handleLinkChange = (e) => {
+    setlink_(e.target.value);
+  };
+
+  const handletitleChange = (e) => {
+    setitleP(e.target.value);
+  };
+
   const handlePostClick = async () => {
     if (inputData === "") {
       alert("empty");
       return;
     } else {
-      handlePostAddition(inputData, imgData);
+      handlePostAddition(inputData, imgData, link_, titleP);
       setinputData("");
       setimgData("");
       setimgLink("");
+      setlink_("");
+      setitleP("");
       setpercent("UPLOAD");
     }
   };
@@ -63,7 +77,7 @@ const NewPost = () => {
   const handleUpload = (e) => {
     if (!imgData) {
       alert("PHOTO MISSING");
-      return
+      return;
     }
     const storageRef = ref(storage, `/files/${imgData.name}`);
     const uploadTask = uploadBytesResumable(storageRef, imgData);
@@ -93,41 +107,58 @@ const NewPost = () => {
 
   return (
     <div className="make-post">
-      <textarea
-        className="text-input"
-        name="post"
-        id="newPost"
-        cols="30"
-        rows="10"
-        onChange={handleChange}
-        value={inputData}
-      ></textarea>
-      <div className="button-container">
-      <div id="input_file">
-        <input
-          style={{
-            display: "none",
-          }}
-          type="file"
-          name="myImage"
-          accept="image/*"
-          id="contained-button-file"
-          onChange={handleFileAttach}
+      <div className="in_text_area">
+      <input
+          type="text"
+          name="tittle"
+          className="cont_link"
+          onChange={handletitleChange}
+          placeholder="Title"
         />
-        <label
-          htmlFor="contained-button-file"
-          style={{
-            color: "white",
-            backgroundcolor: "black",
-            display: "flex",
-          }}
-        >
-          Attach File
-        </label>
-        <Button onClick={handleUpload}>{percent}</Button>
+        <input
+          type="text"
+          name="link"
+          className="cont_link"
+          onChange={handleLinkChange}
+          placeholder="Link"
+        />
+        <textarea
+          className="text-input"
+          name="post"
+          id="newPost"
+          cols="30"
+          rows="10"
+          onChange={handleChange}
+          value={inputData}
+          placeholder="Message"
+        ></textarea>
       </div>
-      <div id="submit_btn">
-        <Button onClick={handlePostClick}>SEND</Button>
+      <div className="button-container">
+        <div id="input_file">
+          <input
+            style={{
+              display: "none",
+            }}
+            type="file"
+            name="myImage"
+            accept="image/*"
+            id="contained-button-file"
+            onChange={handleFileAttach}
+          />
+          <label
+            htmlFor="contained-button-file"
+            style={{
+              color: "white",
+              backgroundcolor: "black",
+              display: "flex",
+            }}
+          >
+            Attach File
+          </label>
+          <Button onClick={handleUpload}>{percent}</Button>
+        </div>
+        <div id="submit_btn">
+          <Button onClick={handlePostClick}>SEND</Button>
         </div>
       </div>
     </div>

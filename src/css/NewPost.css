@@ -1,7 +1,12 @@
 .make-post {
     display: flex;
     justify-content: center;
-    margin: 5px 0;
+    margin: 15px 0;
+}
+
+.in_text_area{
+    display: grid;
+    grid-gap: 10px;
 }
 
 .text-input {
@@ -9,15 +14,27 @@
     height: 100px;
     padding: 10px;
     margin: 0px 5px;
-    border: 1px white solid;
+    border: 1px black solid;
     border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #1e1e1e;
     color: white;
     resize: none;
 }
 
 .text-input:hover {
-    background-color: rgba(61, 61, 61, 0.5);
+    background-color: black;
+}
+
+.cont_link{
+    width: 250px;
+    height: 15px;
+    padding: 10px;
+    margin: 0px 5px;
+    border: 1px black solid;
+    border-radius: 10px;
+    background-color: #1e1e1e;
+    color: white;
+    resize: none;
 }
 
 .button-container {
@@ -42,9 +59,9 @@
     /* min-height: 40px; */
     margin: 0 5px 5px;
     padding: 5px;
-    border: 1px white solid;
+    border: 1px black solid;
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #1e1e1e;
     color: white;
     display: flex;
     justify-content: center;
@@ -53,5 +70,5 @@
 
 #input_file label:hover {
     cursor: pointer;
-    background-color: rgba(61, 61, 61, 0.5);
+    background-color: black;
 }

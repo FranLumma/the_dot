@@ -1,11 +1,24 @@
 .post-container {
     margin: 0 0 10px;
-    border-bottom: 1px whitesmoke solid;
+    width: 850px;
+    border-bottom: 3px #1e1e1e solid;
+    display: flex;
 }
 
 .post-container p {
     margin: 0 0 10px;
-    color: white;
+    color: #1e1e1e;
+}
+
+#under{
+    width: 100%;
+}
+
+.img_container{
+    min-width: 209px;
+    height: 209px;
+    margin: 0 10px 10px 0;
+    background: #1e1e1e;
 }
 
 .info p {
