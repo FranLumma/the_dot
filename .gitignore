@@ -16,6 +16,8 @@
 
 # misc
 /build
+/build/
+build/
 .DS_Store
 .env.local
 .env.development.local
