@@ -1,10 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import icon from "../assets/Group1.svg";
-import icon1 from "../assets/Group.svg";
-import icon2 from "../assets/My_Cube.svg";
-
 const Nav = ({ setlogged }) => {
   const navigate = useNavigate();
   const handleBack = (dest) => {

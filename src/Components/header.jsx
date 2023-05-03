@@ -1,5 +1,3 @@
-import Logo from "../assets/My_place.gif";
-
 const Header = () => {
   return (
     <header className="w-100">

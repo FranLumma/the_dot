@@ -9,7 +9,7 @@ import {
   query,
 } from "firebase/firestore";
 
-import ObserverPost from "./ObserverPost";
+import ObserverPost from "./userPost";
 
 const GuestPosts = () => {
   const [postData, setPostData] = useState([]);
