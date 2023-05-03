@@ -7,8 +7,6 @@ import Button from "../Components/Button";
 
 import Logo from "../assets/My_place.gif";
 
-import "../css/Login.css";
-
 const Login = ({ setlogged, setObserver, setguestLog }) => {
   const [adminPassword, setadminPassword] = useState([]);
   const [adminEmail, setadminEmail] = useState([]);
@@ -40,7 +38,7 @@ const Login = ({ setlogged, setObserver, setguestLog }) => {
         </div>
         <div className="password_input">
           <form className="center">
-          <input
+            <input
               type="email"
               maxLength={35}
               placeholder="EMAIL"

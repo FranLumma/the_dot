@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 
-import { db, storage } from "../firebase";
+import { db, storage } from "../firebase.config";
 import { addDoc, collection } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
 import Button from "./Button";
-import "../css/GuestBook.css";
 
 const NewPost = () => {
   const [guestName, setguestName] = useState("");
@@ -96,29 +95,31 @@ const NewPost = () => {
   };
 
   return (
-    <div className="make-post">
-      <div style={{display: "flex"}}>
-        <div className="content_container">
+    <div className="flex justify-center">
+      <div className="grid grid-flow-row">
+        <div className="mt-2 mb-2">
           <input
-            className="guestName"
+            className="w-[500px] h-[40px] p-1 pl-2 rounded-[4px] border-black border-[2px] bg-[#121212] placeholder-white text-white focus:text-black focus:bg-[#b3b2b3] focus:placeholder-black"
             type="text"
             onChange={handleNameChange}
             placeholder="Name"
             value={guestName}
           />
-        <textarea
-          className="text-input"
-          name="post"
-          id="newPost"
-          cols="30"
-          rows="10"
-          onChange={handleChange}
-          value={inputData}
-          placeholder="Message"
+        </div>
+        <div>
+          <textarea
+            className="p-1 pl-2 rounded-[4px] border-black border-[2px] w-[500px] h-[140px] resize-none bg-[#121212]  placeholder-white text-white focus:text-black focus:bg-[#b3b2b3] focus:placeholder-black"
+            name="post"
+            id="newPost"
+            cols="30"
+            rows="10"
+            onChange={handleChange}
+            value={inputData}
+            placeholder="Message"
           ></textarea>
-          </div>
-        <div className="button-container">
-          <div id="input_file">
+        </div>
+        <div className="mb-2">
+          <div className="flex" id="">
             <input
               style={{
                 display: "none",
@@ -131,18 +132,16 @@ const NewPost = () => {
             />
             <label
               htmlFor="contained-button-file"
-              style={{
-                color: "white",
-                backgroundcolor: "black",
-                display: "flex",
-              }}
+              className="bg-[#fb9f9f] text-black font-bold hover:bg-[#fdb6b6] hover:text-white min-w-fit w-[100px] p-2 mr-1 rounded-[4px] border-[2px] border-black hover:cursor-pointer"
             >
               Attach File
             </label>
             <Button onClick={handleUpload}>{percent}</Button>
-          </div>
-          <div id="submit_btn">
-            <Button onClick={handlePostClick}>SEND</Button>
+            <div id="submit_btn">
+              <Button className="" onClick={handlePostClick}>
+                SEND
+              </Button>
+            </div>
           </div>
         </div>
       </div>

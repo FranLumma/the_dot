@@ -17,7 +17,7 @@ const ObserverPostPage = () => {
     <>
       <Header />
       <Nav />
-      <div
+      {/* <div
         className="content-box"
         style={{
           display: "flex",
@@ -28,7 +28,7 @@ const ObserverPostPage = () => {
         <div className="content_container" style={cc_style}>
           <ObserverPosts />
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

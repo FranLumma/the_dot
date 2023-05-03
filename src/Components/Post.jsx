@@ -1,7 +1,6 @@
 import { React, useState } from "react";
 
 import Button from "./Button";
-import "../css/Post.css";
 import PlaceHolder from "../assets/qr-code.svg";
 
 const Post = ({ postD, deletePost, guestLog }) => {
@@ -39,7 +38,9 @@ const Post = ({ postD, deletePost, guestLog }) => {
         </a>
       ) : null}
       <div id="under">
-        {postD.title ? <p style={{fontWeight: "bold"}}>{postD.title}</p> : null}
+        {postD.title ? (
+          <p style={{ fontWeight: "bold" }}>{postD.title}</p>
+        ) : null}
         {guestLog ? <p>{postD.name}</p> : null}
         <p>{postD.date}</p>
         <p>{postD.text}</p>

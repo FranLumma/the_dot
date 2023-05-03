@@ -1,38 +1,24 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Login from "./Pages/Login";
-import PostPage from "./Pages/PostsPage";
-import GuestPage from "./Pages/GuestBookPage";
-import ObserverPostPage from "./Pages/ObserverPostsPage";
-import About from "./Pages/AboutPage";
+import Header from "./Components/header";
+import Nav from "./Components/NavBar";
 
-import "./css/App.css";
+import GuestPage from "./Pages/GuestBookPage";
+import About from "./Pages/AboutPage";
 
 const App = () => {
   const [logged, setlogged] = useState();
 
   return (
     <>
-      <div className="container">
+      <div className="max-w-1366">
         <Router>
+          <Header />
+          <Nav />
           <Routes>
-            <Route
-              path="/Login"
-              exact
-              element={
-                !logged ? (
-                  <Login
-                    setlogged={setlogged}
-                  />
-                ) : (
-                  <PostPage setlogged={setlogged} />
-                )
-              }
-            />
             <Route path="/About" element={<About />} />
-            <Route path="/" element={<ObserverPostPage />} />
-            <Route path="GuestBook" element={<GuestPage />} />
+            <Route path="/" element={<GuestPage />} />
           </Routes>
         </Router>
       </div>

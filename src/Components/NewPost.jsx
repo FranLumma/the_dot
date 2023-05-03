@@ -5,7 +5,6 @@ import { addDoc, collection } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
 import Button from "./Button";
-import "../css/NewPost.css";
 
 const NewPost = () => {
   const [inputData, setinputData] = useState("");
@@ -108,7 +107,7 @@ const NewPost = () => {
   return (
     <div className="make-post">
       <div className="in_text_area">
-      <input
+        <input
           type="text"
           name="tittle"
           className="cont_link"
