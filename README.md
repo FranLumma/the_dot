@@ -21,13 +21,14 @@ This is a simple forum comment application built with React, Tailwind CSS, and F
 3. Create a Firebase project and enable the real-time database
 4. Add your Firebase project configuration to the `.env` file
 
-REACT_APP_FIREBASE_API_KEY=your_api_key
-REACT_APP_FIREBASE_AUTH_DOMAIN=your_auth_domain
-REACT_APP_FIREBASE_DATABASE_URL=your_database_url
-REACT_APP_FIREBASE_PROJECT_ID=your_project_id
-REACT_APP_FIREBASE_STORAGE_BUCKET=your_storage_bucket
-REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-REACT_APP_FIREBASE_APP_ID=your_app_id
+REACT_APP_API_KEY = your_api_key
+REACT_APP_AUTH_DOMAIN = your_auth_domain
+REACT_APP_DATA_BASE_URL = your_database_url
+REACT_APP_PROJECT_ID = your_project_id
+REACT_APP_STORAGE_BUCKET = your_storage_bucket
+REACT_APP_MESSAGE_SENDER_ID = your_sender_id
+REACT_APP_APP_ID = your_app_id
+REACT_APP_MEASUREMENT_ID = your_measurement_id
 
 5. Start the application using `npm run start`
 
