@@ -1,6 +1,6 @@
-# Simple React Forum Comment
+# Simple React GuestBook
 
-This is a simple forum comment application built with React, Tailwind CSS, and Firebase. The application allows users to post comments, view existing comments, and upload images.
+This is a simple guestBook application built with React, Tailwind CSS, and Firebase. The application allows users to leave comments, view existing comments, and upload images.
 
 ## Technologies Used
 
